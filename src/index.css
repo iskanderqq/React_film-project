@@ -1,13 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@1;100;200;300;400;500;600;700;800;900;1000&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Ysabeau Infant', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Ysabeau Infant', sans-serif;
+}
+
+.content{
+  min-height: calc(100vh - 64px - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.movies{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+.card-content{
+  display: flex;
+  justify-content: space-between;
+}
+img{
+  width: 100%;
+}
+.row{
+  width: 100%;
+}
+label{
+  margin-right: 20px;
+}
+.radio-container{
+  display: flex;
 }
