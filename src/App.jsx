@@ -51,7 +51,7 @@ class App extends Component{
     fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}`)
       .then( response => response.json())
         .then( result => this.setState({api: result, loading:false}) )
-        .cath((err)=>{
+        .catch((err)=>{
           console.error(err)
           this.setState({loading:false})
         })
