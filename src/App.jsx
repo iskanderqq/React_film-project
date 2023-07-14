@@ -22,22 +22,22 @@ class App extends Component{
     this.setState({loading:true})
     if(type === "All"){
       if(!val){
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}`)
         .then( response => response.json())
           .then( result => this.setState({api: result, loading:false}) )
       }else{
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${val}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${val}`)
         .then( response => response.json())
           .then( result => this.setState({api: result,loading:false}) )
       }
      
     }else{
       if(!val){
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}&type=${type}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}&type=${type}`)
         .then( response => response.json())
         .then( result => this.setState({api: result,loading:false}) )
       }else{
-        fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${val}&type=${type}`)
+        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${val}&type=${type}`)
           .then( response => response.json())
           .then( result => this.setState({api: result,loading:false}) )
       }
@@ -48,9 +48,13 @@ class App extends Component{
 
   componentDidMount(){
     console.log(process.env)
-    fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}`)
+    fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${this.state.searchVal}`)
       .then( response => response.json())
         .then( result => this.setState({api: result, loading:false}) )
+        .cath((err)=>{
+          console.error(err)
+          this.setState({loading:false})
+        })
     
   }
  
